@@ -1,0 +1,151 @@
+FOR LOOP
+
+word="Hello"
+Letters=[]
+
+for w in word:
+    print(w)
+    if w== "e":
+       print("What a funny letter")
+    Letters.append(w)
+print(Letters)
+
+
+for num in range(10):
+	print(num)
+
+WHILE LOOP
+counter = 1
+sum = 0
+while(counter < 10):
+    print(counter)
+    sum=sum+counter
+    counter=counter+1
+
+Letters=["a","b","c","d","e"]
+
+Index = 0
+while (Index < len(Letters)):
+	print(Index)
+	print(Letters[Index])
+	Index=Index+1
+
+
+BREAK
+participants = ["Jen", "Alex", "Tina", "Joe", "Ben"]
+position=1
+for name in participant:
+	if name=="Tina":
+	break
+print(position)
+print sum
+
+
+ADVANCED LOOPS
+Nested Loop
+
+for row in range(5):
+	if row % 2==0:
+		for column in range(1,6):
+		    if column%2 ==1:
+			if column != 5:
+			   print(" ", end="")
+			else:
+			   print(" ")
+		    else:
+			print("|",end="")
+   
+		 
+	  else:
+		print("------")
+
+DICTIONARIES AND SETS
+EXAMPLES
+BlackShoes= {42:2,41:3,40:4,39:1,38:0}
+print(BlackShoes)
+while(True):
+	purchaseSize = int(input("Which shoe size do you like to buy?\n"))
+	if purchaseSize < 0:
+		break
+	if BlackShoes[purchaseSize] > 0:
+		BlackShoes[purchaseSize] -= 1
+	else:
+		print("Shoes no longer in stock")
+	print(BlackShoes)
+
+INPUT AND OUTPUT
+scores=[]
+for i in range(5):
+    scores=int(input("Please enter the number: "+str(i)+")
+	scores
+print(scores)
+
+INPUT AND OUTPUT(FILE)
+
+VacationSpots = ["London", "Paris", "New York", "Utah", "Iceland"]
+VacationFile = open("VacationPlaces", "w")
+
+for Spots in VacationSpots:
+	VacationFile.write(Spots)
+
+VacationFile.close() 
+
+VacationFile= open("VacationPlaces", "r")
+TheWholeFile = VacationFile.read()
+print(TheWholeFile)
+VacationFile.close()
+
+VacationFile=open("VacationPlaces", "r")
+
+FirstLine = VacationFile.readline()
+print(FirstLine)
+SecondLine = VacationFile.readline()
+print(SecondLine)
+for line in VacationFile:
+    print(line, end="") 
+
+VacationFile.close()
+FinalSpot = "Thailand\n"
+
+VacationFile = open("VacationPlaces", "a")
+VacationFile.write(FinalSpot)
+VacationFile.close()
+
+VacationFile=open("VacationPlaces","r")
+for line in VacationFile:
+	print(line, end="")
+VacationFile.close()
+
+with open("VacationPlaces","r") as VacationFile:
+	for line in VacationFile:
+		print(line)
+
+TIC-TAC-TOE
+def drawField():
+	for row in range(5):
+	    if row % 2 == 0:
+		for column in range(5):
+		    if column%2 == 0:
+			if column != 4:
+			   print(" ",end="")
+			else:
+			    print(" ")
+			else:
+			    print("|",end="")
+		else:
+                    print("-----")
+Player =1
+currentField = [[" "," "," "],[" "," "," "],[" "," "," "]]
+while(True):
+	print("Players turn: ", Player)
+	MoveRow = int(input("Please enter the row\n"))
+	MoveColumn = int(input("Please enter the column"))
+	if Player == 1:
+		#make move for player 1
+	   currentField[MoveColumn][MoveRow]= "X"
+	   Player = 2
+	else:
+		#make move for player 1
+	   currentField[MoveColumn][MoveRow]="O"
+	   Player = 1
+	print(currentField)
